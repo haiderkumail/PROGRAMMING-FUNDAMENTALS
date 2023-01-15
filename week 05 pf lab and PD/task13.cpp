@@ -1,5 +1,5 @@
-#include<iostream>
-#include<cmath>
+#include <iostream>
+#include <cmath>
 using namespace std;
 void neededHours(float days,float hours,int workers );
 main()

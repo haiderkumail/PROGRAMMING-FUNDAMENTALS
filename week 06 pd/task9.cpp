@@ -25,7 +25,7 @@ main()
     showGhost (gx, gy);
    
     while (gameRunning)
-    
+    {
         if(GetAsyncKeyState(VK_LEFT))
         {
             char nextLocation = getCharAtxy(pacmanX - 1, pacmanY);
@@ -72,13 +72,14 @@ main()
             gameRunning = false;
 
         }
-        
-    
-        
-        
-                     if(direction == "right")
-{          
-       {
+        Sleep(200);
+
+    }
+        while(true)
+        {
+         if(direction == "right")
+        {          
+       
             char nextLocation = getCharAtxy (gx + 1, gy);
          if(nextLocation == '%')      
           {
@@ -92,6 +93,7 @@ main()
            previousChar = nextLocation;
           showGhost (gx, gy); 
         }
+        }
         if(direction== "left")
           { 
             char nextLocation = getCharAtxy (gx - 1, gy);
@@ -99,7 +101,7 @@ main()
            {
             direction= "right";
            }
-          }
+          
              else if (nextLocation == ' '  || nextLocation == '.') 
              {
              clear (gx, gy, previousChar); 
@@ -107,10 +109,10 @@ main()
              previousChar = nextLocation;
                showGhost (gx, gy);
              }
-          }
-}        
-               Sleep(200);
-        
+          
+          }       
+               Sleep(100);
+        }
 
 }
 void gotoxy(int x, int y)
